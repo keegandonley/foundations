@@ -1,12 +1,13 @@
 {
   "name": "@keegancodes/foundations",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Keegan Donley",
   "license": "MIT",
   "scripts": {
-    "build": "tsc & cp src/main.css dist/main.css"
+    "build": "tsc & cp src/main.css dist/main.css",
+    "release": "ts-node publish.ts"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
