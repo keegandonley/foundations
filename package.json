@@ -1,0 +1,17 @@
+{
+  "name": "@keegancodes/foundations",
+  "version": "1.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Keegan Donley",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc & cp src/main.css dist/main.css"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.4.4"
+  },
+  "description": ""
+}
