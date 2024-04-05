@@ -1,4 +1,5 @@
 const fs = require("fs");
+const exec = require("child_process").exec;
 
 fs.readFile("./package.json", (err, data) => {
   if (err) {
@@ -18,6 +19,29 @@ fs.readFile("./package.json", (err, data) => {
       console.error(err);
       process.exit(1);
     }
-    console.log(`Bumped version to ${newVersion}`);
+
+    exec(
+      `git add package.json && git commit -m "Bump version to ${newVersion}"`,
+      (err, stdout, stderr) => {
+        if (err) {
+          console.error(err);
+          fs.writeFile("./package.json", stringData, () => {
+            process.exit(1);
+          });
+        }
+        console.log(stdout);
+        console.error(stderr);
+        exec('pnpm publish --access="public"', (err, stdout, stderr) => {
+          if (err) {
+            console.error(err);
+            fs.writeFile("./package.json", stringData, () => {
+              process.exit(1);
+            });
+          }
+          console.log(stdout);
+          console.error(stderr);
+        });
+      }
+    );
   });
 });
