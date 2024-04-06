@@ -10,8 +10,8 @@
     "release": "pnpm build && ts-node publish.ts"
   },
   "devDependencies": {
+    "@types/node": "^20.12.5",
     "ts-node": "^10.9.2",
-    "tsc": "^2.0.4",
     "typescript": "^5.4.4"
   },
   "description": ""
