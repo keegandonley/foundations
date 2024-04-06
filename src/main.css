@@ -13,14 +13,6 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .animate-viz {
-    animation: show linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
-  }
-}
-
 @keyframes zoom-in {
   from {
     transform: scale(0.9);
@@ -32,9 +24,17 @@
   }
 }
 
-.animate-zoom {
-  opacity: 0;
-  animation: zoom-in 0.5s forwards;
+@media (prefers-reduced-motion: no-preference) {
+  .animate-viz {
+    animation: show linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+
+  .animate-zoom {
+    opacity: 0;
+    animation: zoom-in 0.5s forwards;
+  }
 }
 
 .animate-stage-1 {
