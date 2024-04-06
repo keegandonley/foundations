@@ -20,3 +20,35 @@
     animation-range: entry 20% cover 40%;
   }
 }
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoom {
+  opacity: 0;
+  animation: zoom-in 0.5s forwards;
+}
+
+.animate-stage-1 {
+  animation-delay: 0s;
+}
+
+.animate-stage-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-stage-3 {
+  animation-delay: 0.4s;
+}
+
+.animate-stage-4 {
+  animation-delay: 0.6s;
+}
