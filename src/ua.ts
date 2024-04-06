@@ -10,7 +10,7 @@ export const mobileUAPatterns = [
 
 // Normally detecting a user agent like this is not a good idea, but can be treated as a
 // simple performance optimization
-export const getIsLikelyMobile = (userAgent?: string) => {
+export const isUserAgentLikelyMobile = (userAgent?: string) => {
   return mobileUAPatterns.some((toMatchItem) => {
     return userAgent ? userAgent.match(toMatchItem) : false;
   });
