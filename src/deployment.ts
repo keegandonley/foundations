@@ -32,6 +32,6 @@ export const getUrlFromHost = (host: string | null, path?: `/${string}`) => {
   return `https://${host}${path}`;
 };
 
-export const getCookieDomain = () => {
-  return process.env.NODE_ENV === "development" ? "localhost" : "keegan.codes";
+export const getCookieDomain = (domain: string) => {
+  return process.env.NODE_ENV === "development" ? "localhost" : domain;
 };
