@@ -1,3 +1,7 @@
+export const isServer = () => {
+  return typeof window === "undefined";
+};
+
 export const getFullyQualifiedDeploymentUrl = async (
   path: `/${string}`,
   importHeaders?: () => Promise<any>,
@@ -11,7 +15,7 @@ export const getFullyQualifiedDeploymentUrl = async (
   let host = null;
   let cookie;
 
-  if (typeof window === "undefined" && importHeaders) {
+  if (isServer() && importHeaders) {
     const getHeaders = await importHeaders();
     const headersList = getHeaders();
     host = headersList.get("host") || "keegan.codes";
